@@ -6,6 +6,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta charset="utf-8" />
       <link rel="stylesheet" type="text/css" href="signup_style.css" />
+      
+      
       <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -39,19 +41,24 @@
               loop
               autoplay
             ></lottie-player>
-            <input type="text" placeholder="full name" />
-            <input type="text" placeholder="email address" />
-            <input type="text" placeholder="pick a username" />
-            <input type="password" id="password" placeholder="set a password" />
+            <input type="text" placeholder="full name" /><P></P>
+            <input type="text" placeholder="email address" /><P></P>
+            <input type="text" placeholder="pick a username" /><P></P>
+            <input type="password" id="password" placeholder="set a password" /><P></P>
             <i class="fas fa-eye" onclick="show()"></i>
             <br>
             <br>
           </form>
 
           <form class="login-form">
-            <button type="button" onclick="window.location.href='login.html'">
+            <button type="button">
               SIGN UP
             </button>
+            <!--return to the login page--->
+            <div id="goto">
+             <a href="./login.html" style="text-decoration: none;"> <p style="color: white;font-weight: bold;">Open Log in page</p></a>
+            </div>
+            
           </form>
         </div>
       </div>
