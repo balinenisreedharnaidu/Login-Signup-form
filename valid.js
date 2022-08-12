@@ -1,3 +1,24 @@
+
+//ck function role is alert sucess message when form in validated
+function ck(num){
+    txt='';
+    ptags=document.querySelectorAll('p');
+    for (let index = 0; index < 4; index++) {
+        txt=txt+ptags[index].innerText;
+}
+    
+    if(txt.length===0){
+        document.querySelector('form').reset();
+        alert('sucess....');
+    }
+}
+
+//setSucess fucntion
+function setSuccess(num){
+    document.querySelectorAll("p")[num].innerText="";
+    
+}
+
 //setErr funciton
 function setErr(msg,i){
     console.log(msg);
@@ -32,6 +53,9 @@ function goValid(){
         console.log("first name is less than 6 chars");
         setErr('Dear shree, Full name must be greater than 6 characters.',0);
     }
+    else if(fntag.value.length>6){
+        setSuccess(0);
+    }
 
     //valid for email address
     if(etag.value===""){
@@ -40,9 +64,10 @@ function goValid(){
     }
 
     else if(isValid(etag.value)){
-        console.log("Email given is valid.Sucess...")
+        console.log("Email given is valid.Sucess...");
+        setSuccess(1);
     }
-    else{
+    else if (!isValid(etag.value)){
         setErr("Dear shree! Given email is not valid",1);
         console.log("email is not valid");
     }
@@ -56,6 +81,9 @@ function goValid(){
         console.log("username is less than 6 chars");
         setErr('Dear shree, username must be greater than 6 characters.',2);
     }
+    else if(usertag.value.length>6){
+        setSuccess(2);
+    }
     
 
     //valid for password
@@ -66,6 +94,10 @@ function goValid(){
     else if( pwdtag.value.length>0 && pwdtag.value.length<=6 ){
         console.log("password is less than 6 chars");
         setErr('Dear shree, password must be greater than 6 characters.',3);
+    }
+    else if(pwdtag.value.length>6){
+        setSuccess(3);
+        
     }
 
 
@@ -78,4 +110,13 @@ function goValid(){
 document.querySelector(".login-form").addEventListener("click",(e)=>{
     console.log("clicked !!!");
     goValid();
+    ck();
 })
+
+
+//clear the warning text when mouse enter in input
+for (let index = 0; index < 4; index++) {
+    document.querySelectorAll('input')[index].addEventListener("mouseenter",(e)=>{
+        document.querySelectorAll('p')[index].innerText="";
+    })
+}
