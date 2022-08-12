@@ -47,11 +47,11 @@ function goValid(){
     //valid for first name
     if(fntag.value===""){
         console.log("first name is empty");
-        setErr('Dear shree, Full name must not be empty.',0);
+        setErr('Full name must not be empty.',0);
     }
     else if( fntag.value.length>0 && fntag.value.length<=6 ){
         console.log("first name is less than 6 chars");
-        setErr('Dear shree, Full name must be greater than 6 characters.',0);
+        setErr('Full name must be greater than 6 characters.',0);
     }
     else if(fntag.value.length>6){
         setSuccess(0);
@@ -60,7 +60,7 @@ function goValid(){
     //valid for email address
     if(etag.value===""){
         console.log("Email  is not given...");
-        setErr('Dear shree, Email should not be empty.',1);
+        setErr('Email should not be empty.',1);
     }
 
     else if(isValid(etag.value)){
@@ -68,18 +68,18 @@ function goValid(){
         setSuccess(1);
     }
     else if (!isValid(etag.value)){
-        setErr("Dear shree! Given email is not valid",1);
+        setErr("Given email is not valid",1);
         console.log("email is not valid");
     }
 
     //valid for username
     if(usertag.value===""){
         console.log("username is empty");
-        setErr('Dear shree, username must not be empty.',2);
+        setErr('username must not be empty.',2);
     }
     else if( usertag.value.length>0 && usertag.value.length<=6 ){
         console.log("username is less than 6 chars");
-        setErr('Dear shree, username must be greater than 6 characters.',2);
+        setErr('username must be greater than 6 characters.',2);
     }
     else if(usertag.value.length>6){
         setSuccess(2);
@@ -89,11 +89,11 @@ function goValid(){
     //valid for password
     if(pwdtag.value===""){
         console.log("password is empty");
-        setErr('Dear shree, password must not be empty.',3);
+        setErr('password must not be empty.',3);
     }
     else if( pwdtag.value.length>0 && pwdtag.value.length<=6 ){
         console.log("password is less than 6 chars");
-        setErr('Dear shree, password must be greater than 6 characters.',3);
+        setErr('password must be greater than 6 characters.',3);
     }
     else if(pwdtag.value.length>6){
         setSuccess(3);
